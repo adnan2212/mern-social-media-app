@@ -1,0 +1,6 @@
+middleware is basically something that runs in between different requests, 
+basically funtions that runs in between different things
+
+Authentication --> when you register and when you login
+
+Authorization --> when you wanna make sure someone is logged in so you can perform certain actions
