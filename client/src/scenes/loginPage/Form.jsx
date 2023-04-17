@@ -55,8 +55,6 @@ const Form = () => {
   const isLogin = pageType === "login";
   const isRegister = pageType === "register";
 
-  console.log(process.env.REACT_APP_URL);
-
   const register = async (values, onSubmitProps) => {
     // this allows us to send form info with image
     const formData = new FormData();
