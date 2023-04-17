@@ -13,7 +13,7 @@ const FriendListWidget = ({ userId }) => {
 
   const getFriends = async () => {
     const response = await fetch(
-      `http://localhost:3001/users/${userId}/friends`,
+      `${process.env.REACT_APP_URL}/users/${userId}/friends`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
@@ -40,7 +40,8 @@ const FriendListWidget = ({ userId }) => {
       <Box display="flex" flexDirection="column" gap="1.5rem">
         {friends.map((friend) => (
           <Friend
-            key={friend._id}
+            // key={Math.floor(Math.random() * 100) + 1}
+            key={friend._id + friend.lastName}
             friendId={friend._id}
             name={`${friend.firstName} ${friend.lastName}`}
             subtitle={friend.occupation}
